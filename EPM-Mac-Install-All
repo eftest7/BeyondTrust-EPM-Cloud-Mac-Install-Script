@@ -1,0 +1,19 @@
+echo "******************************************"
+echo "installing PMC client"
+echo "******************************************"
+cd /Users/admin01/Downloads/
+sudo installer -pkg PrivilegeManagementForMa*.pkg -target /
+echo "******************************************"
+echo "installing PMC settings"
+echo "******************************************"
+cd /Users/admin01/Downloads/
+sudo installer -pkg PMC*.pkg -target /
+echo "******************************************"
+echo "installing PMC adapter"
+echo "******************************************"
+cd /Users/admin01/Downloads/
+hdiutil attach PrivilegeManagementConsoleAdapter.dmg
+cd /Volumes/PrivilegeManagementConsoleAdapter
+sudo installer -pkg PMC_Adapter*.pkg -target "/"
+hdiutil detach /Volumes/PrivilegeManagementConsoleAdapter -force
+echo "**************DONE****************************"
